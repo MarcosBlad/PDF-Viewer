@@ -1,0 +1,30 @@
+
+Primeiramente você precisa colocar o seu arquivo PDF no projeto.
+
+Crie uma pasta assets, new, Folder,Assets Folder.
+Coloque o PDF dentro da pasta assets.
+
+Exemplo de PDF: livro.pdf
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+private PDFView pdfView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_projeto_teste);
+
+        pdfView();
+
+    }
+
+    private void pdfView() {
+        pdfView = (PDFView) findViewById(R.id.pdfExemplo);
+
+        pdfView.fromAsset("livro.pdf").defaultPage(0).load();
+    }
